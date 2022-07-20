@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[4036],{7890:n=>{n.exports=JSON.parse('{"label":"unionFS","permalink":"/docs/tags/union-fs","allTagsPath":"/docs/tags","count":1,"items":[{"id":"docker/unionFS","title":"Union File System","description":"TODO","permalink":"/docs/docker/unionFS"}]}')}}]);

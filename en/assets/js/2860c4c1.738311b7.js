@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[6566],{9291:s=>{s.exports=JSON.parse('{"label":"cgroups","permalink":"/en/docs/tags/cgroups","allTagsPath":"/en/docs/tags","count":1,"items":[{"id":"docker/cgroups","title":"Linux Cgroups \u4ecb\u7ecd","description":"TODO","permalink":"/en/docs/docker/cgroups"}]}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[4121],{8070:e=>{e.exports=JSON.parse('[{"label":"docker","permalink":"/en/docs/tags/docker","count":2},{"label":"cloudnative","permalink":"/en/docs/tags/cloudnative","count":2},{"label":"namespace","permalink":"/en/docs/tags/namespace","count":2}]')}}]);
