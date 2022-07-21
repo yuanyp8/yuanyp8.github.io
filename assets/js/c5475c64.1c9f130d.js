@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[5294],{2026:e=>{e.exports=JSON.parse('{"label":"regex","permalink":"/blog/tags/regex","allTagsPath":"/blog/tags","count":1}')}}]);

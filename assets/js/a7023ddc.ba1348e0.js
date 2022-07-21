@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[1713],{3457:l=>{l.exports=JSON.parse('[{"label":"linux","permalink":"/blog/tags/linux","count":1},{"label":"shell","permalink":"/blog/tags/shell","count":1},{"label":"regex","permalink":"/blog/tags/regex","count":1},{"label":"awk","permalink":"/blog/tags/awk","count":1}]')}}]);

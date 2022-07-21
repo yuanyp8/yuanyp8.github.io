@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"\u535a\u5ba2\u5217\u8868","items":[{"title":"awk \u7528\u6cd5","permalink":"/blog/awk"}]}')}}]);
