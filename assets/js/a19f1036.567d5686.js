@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[2834],{1263:s=>{s.exports=JSON.parse('{"label":"uri","permalink":"/docs/tags/uri","allTagsPath":"/docs/tags","count":1,"items":[{"id":"http/uri","title":"URI \u7b80\u4ecb","description":"&nbsp;","permalink":"/docs/http/uri"}]}')}}]);

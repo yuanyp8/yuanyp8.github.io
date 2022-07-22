@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[658],{776:c=>{c.exports=JSON.parse('{"label":"caching","permalink":"/docs/tags/caching","allTagsPath":"/docs/tags","count":1,"items":[{"id":"http/caching","title":"HTTP \u7f13\u5b58","description":"&nbsp;","permalink":"/docs/http/caching"}]}')}}]);

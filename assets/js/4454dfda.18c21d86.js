@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[17],{2708:s=>{s.exports=JSON.parse('{"label":"\u8de8\u57df","permalink":"/docs/tags/\u8de8\u57df","allTagsPath":"/docs/tags","count":1,"items":[{"id":"http/cors","title":"\u8de8\u6e90\u8d44\u6e90\u5171\u4eab\uff08CORS\uff09","description":"&nbsp;","permalink":"/docs/http/cors"}]}')}}]);

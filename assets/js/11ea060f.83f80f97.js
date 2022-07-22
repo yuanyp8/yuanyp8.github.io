@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[4054],{4311:e=>{e.exports=JSON.parse('{"label":"headers","permalink":"/docs/tags/headers","allTagsPath":"/docs/tags","count":1,"items":[{"id":"http/headers","title":"\u9644\u5f55 headers","description":"&nbsp;","permalink":"/docs/http/headers"}]}')}}]);

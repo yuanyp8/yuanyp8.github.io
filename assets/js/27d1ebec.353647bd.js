@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[4326],{7365:s=>{s.exports=JSON.parse('{"label":"PATCH","permalink":"/docs/tags/patch","allTagsPath":"/docs/tags","count":1,"items":[{"id":"http/request_methods/PATCH","title":"PATCH","description":"&nbsp","permalink":"/docs/http/request_methods/PATCH"}]}')}}]);

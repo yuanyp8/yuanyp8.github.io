@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[5279],{3186:e=>{e.exports=JSON.parse('{"label":"redirections","permalink":"/docs/tags/redirections","allTagsPath":"/docs/tags","count":1,"items":[{"id":"http/redirections","title":"HTTP \u7684\u91cd\u5b9a\u5411","description":"&nbsp;","permalink":"/docs/http/redirections"}]}')}}]);

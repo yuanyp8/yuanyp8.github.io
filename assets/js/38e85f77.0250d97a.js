@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[4096],{2401:s=>{s.exports=JSON.parse('{"label":"status","permalink":"/docs/tags/status","allTagsPath":"/docs/tags","count":1,"items":[{"id":"http/status","title":"\u9644\u5f55 Response Status Code","description":"&nbsp;","permalink":"/docs/http/status"}]}')}}]);

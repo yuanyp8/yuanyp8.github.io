@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_dochub=self.webpackChunkyuanyp_8_dochub||[]).push([[6590],{9293:s=>{s.exports=JSON.parse('{"label":"cookies","permalink":"/docs/tags/cookies","allTagsPath":"/docs/tags","count":1,"items":[{"id":"http/cookies","title":"HTTP Cookie","description":"&nbsp;","permalink":"/docs/http/cookies"}]}')}}]);
