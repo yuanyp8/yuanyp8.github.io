@@ -1,7 +1,7 @@
 ---
 slug: long-blog-post
 title: Long Blog Post
-authors: yuanyp8
+authors: endi
 tags: [hello, docusaurus]
 ---
 
