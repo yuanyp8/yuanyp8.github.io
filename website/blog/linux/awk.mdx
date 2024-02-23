@@ -1,0 +1,278 @@
+---
+slug: awk
+title: awk 高级玩法
+authors: [yuanyp8]
+tags: [linux, shell, regex, awk]
+---
+import BrowserWindow from '@site/src/components/BrowserWindow';
+
+<img className="Badges" src="https://img.shields.io/badge/author-yuanyp8-yellowgreen"/>
+<img className="Badges" src="https://img.shields.io/badge/date-20240221-blue"/>
+<br/>
+
+
+
+
+## awk脚本
+
+### 模式匹配
+
+假设我们现在有如下一个名为 `data1.txt` 的文本文件测试数据
+
+```shell title="/opt/testdata/data1.txt"
+apple 10
+banana 20
+orange 15
+```
+
+现在，我们需要使用 `awk` 找出其中价格大于 15 的水果, 我们可以编写一个如下的策略文件
+
+```awk title="/opt/awk/script1.awk"
+$2 > 15 { print $1 " is expensive." }
+```
+
+基于这个策略, 我们就能找到想要的答案
+
+<BrowserWindow>
+```bash
+#  awk -f /opt/awk/script1.awk /opt/testdata/data1.txt
+# highlight-next-line
+banana is expensive.
+```
+</BrowserWindow>
+
+
+:::tip
+
+通过结合 `-f` 选项，可以将 `awk` 脚本保存在文件中并通过 `-f` 选项来执行它。这样可以使得复杂的文本处理更加易于管理和维护
+
+:::
+
+
+
+### 自定义函数
+假设我们要计算出两个字符串中长的字符串比短的长多少，脚本如下：
+
+```shell title="/opt/awk/script2.awk"
+function calculate_length_diff(str_a, str_b,     len_a, len_b, diff) {
+    len_a = length(str_a);
+    len_b = length(str_b);
+    diff = len_a - len_b;
+    if (diff < 0) {
+        diff *= -1;
+    }
+    return diff;
+}
+
+BEGIN {
+    print "Length difference between the longer string and the shorter string: " calculate_length_diff(str_a, str_b);
+}
+```
+接下来我们测试下这个函数策略是否正确
+
+<BrowserWindow>
+```bash
+# awk -f /opt/awk/script2.awk  -v str_a=abc -v str_b=abcd
+# highlight-next-line
+Length difference between the longer string and the shorter string: 1
+```
+</BrowserWindow>
+
+:::info 这里为什么使用的是<Highlight color="#25c2a0">BEGIN</Highlight>而不是<Highlight color="#25c2a0">END</Highlight>?
+
+AWK 通过输入流处理数据。它从输入中读取一行，然后执行匹配该行的所有操作，然后再次读取下一行，依此类推，直到输入全部读取完毕。
+
+**BEGIN 块在 AWK 开始读取输入之前执行，而 END 块则是在 AWK 读取完所有输入后执行**。
+
+如果没有提供任何输入（例如，没有文件名或没有管道输入），那么 END 块将不会执行。
+在这个脚本中，因为你并没有提供任何输入给 AWK 处理，应该使用 BEGIN 而不是 END。另外，还需使用 -v 参数在命令行设置 str_a 和 str_b 的值。
+
+:::
+
+
+### `BEGIN` 和 `END` 模式
+
+前面我们已经简单提及过了, 这里只做简单的演示
+
+```shell title="/opt/awk/script3.awk"
+BEGIN { lines = 0 }
+{ lines++ }
+END { print "Total lines:", lines }
+```
+
+下面是我们的测试数据
+```shell title="/opt/testdata/data3.txt"
+1111
+2
+3333
+4
+555
+666
+```
+
+接下来验证下
+<BrowserWindow>
+```bash
+# awk -f /opt/awk/script3.awk /opt/testdata/data3.txt
+# highlight-next-line
+Total lines: 6
+```
+</BrowserWindow>
+
+
+
+## 分隔符
+
+:::note
+
+在Awk编程语言中，分隔符扮演着非常重要的角色，它们决定了Awk如何解读输入行中的字段（fields）。Awk中有两种主要的分隔符类型：
+
+:::
+
+
+
+
+输入字段分隔符（Input Field Separator, FS）
+
+1. - **作用**：FS用于将每一行文本拆分成多个字段（列）。
+
+   - **默认值**：默认情况下，FS是单个空格或制表符（`\t`）。
+
+   - 设置方法
+     - 直接在命令行中指定：`-F '<delimiter>'`，其中`<delimiter>`是要使用的分隔符。
+     - 在脚本中设置内部变量：`FS="<delimiter>"`。
+
+2. 输出字段分隔符（Output Field Separator, OFS）
+
+   - **作用**：OFS用于在打印或输出字段时，在不同字段之间插入的分隔符。
+
+   - **默认值**：默认情况下，OFS也是单个空格。
+
+   - 设置方法
+     - 同样在命令行中指定：`-v OFS='<delimiter>'`。
+     - 在脚本中设置内部变量：`OFS="<delimiter>"`。
+
+
+
+
+
+
+
+
+
+awk 是一种编程语言，用于在linux/unix下对文本和数据进行处理。数据可以来自标准输入(stdin)、一个或多个文件，或其它命令的输出。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。它在命令行中使用，但更多是作为脚本来使用。awk有很多内建的功能，比如数组、函数等，这是它和C语言的相同之处，灵活性是awk最大的优势。
+
+<Highlight color="#25c2a0">Docusaurus green</Highlight> and <Highlight color="#1877F2">Facebook blue</Highlight> are my favorite colors.
+
+
+
+## awk 简介
+awk 是一种编程语言，用于在linux/unix下对文本和数据进行处理。数据可以来自标准输入(stdin)、一个或多个文件，或其它命令的输出。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。它在命令行中使用，但更多是作为脚本来使用。awk有很多内建的功能，比如数组、函数等，这是它和C语言的相同之处，灵活性是awk最大的优势。
+## 命令行格式
+
+
+```shell
+awk: option requires an argument -- h
+Usage: awk [POSIX or GNU style options] -f progfile [--] file ...
+Usage: awk [POSIX or GNU style options] [--] 'program' file ...
+```
+
+
+<details>
+  <summary>参数</summary>
+  <div>
+
+```shell
+        -f progfile             --file=progfile
+        -F fs                   --field-separator=fs
+        -v var=val              --assign=var=val
+Short options:          GNU long options: (extensions)
+        -b                      --characters-as-bytes
+        -c                      --traditional
+        -C                      --copyright
+        -d[file]                --dump-variables[=file]
+        -e 'program-text'       --source='program-text'
+        -E file                 --exec=file
+        -g                      --gen-pot
+        -h                      --help
+        -L [fatal]              --lint[=fatal]
+        -n                      --non-decimal-data
+        -N                      --use-lc-numeric
+        -O                      --optimize
+        -p[file]                --profile[=file]
+        -P                      --posix
+        -r                      --re-interval
+        -S                      --sandbox
+        -t                      --lint-old
+        -V                      --version
+```
+
+  </div>
+</details>
+
+## `awk`结合`printf`的玩法
+
+原始数据
+```shell
+# kubectl get pods -A
+NAMESPACE                      NAME                                                              READY   STATUS                  RESTARTS   AGE
+elastic-system                 elastic-operator-0                                                0/1     ImagePullBackOff        0          88d
+istio-system                   istio-ingressgateway-6cfc89c4b6-krwcj                             1/1     Running                 3          301d
+istio-system                   istiod-1-6-10-75fcd5bbd5-qdm8t                                    1/1     Running                 3          301d
+istio-system                   jaeger-collector-5f6d955b67-fg4v4                                 1/1     Running                 13         301d
+istio-system                   jaeger-es-index-cleaner-1658159700-vhv5n                          0/1     Completed               0          2d16h
+istio-system                   jaeger-es-index-cleaner-1658246100-9ct9v                          0/1     Completed               0          40h
+istio-system                   jaeger-es-index-cleaner-1658332500-pztsw                          0/1     Completed               0          16h
+istio-system                   jaeger-operator-5d78df8787-kkrsh                                  1/1     Running                 3          301d
+istio-system                   jaeger-query-75cf7bd66b-lrtbv                                     2/2     Running                 15         301d
+istio-system                   kiali-7b8cffc45c-7lxzm                                            1/1     Running                 3
+```
+
+实现如下批量功能
+```shell
+     namespace:${NAMESAPCE_NAME}, pod:${POD_NAME}
+```
+
+<details>
+  <summary>语法实现</summary>
+  <div>
+
+
+```shell
+# kubectl get pods -A |awk '{printf("namespace:%s, pod:%s\n", $1, $2)}'
+#highlight-start
+namespace:pl, pod:web-revision-v1-55674487c-qgrfs
+namespace:pl, pod:web-revision-v1-5cb47bc74-f7ft2
+namespace:pl, pod:web-revision-v1-5cb47bc74-mvfmt
+namespace:podscaler, pod:redis-0
+namespace:project-system, pod:project-controller-manager-856cfbdfc6-r84xm
+namespace:velero, pod:restic-rkwd6
+namespace:velero, pod:restic-wjdqs
+namespace:velero, pod:velero-8668b67b-qwk5t
+namespace:velero, pod:velero-8668b67b-rffxn
+namespace:vue-test, pod:demo-77d5c8d6b6-vd5x6
+namespace:vue-test, pod:games-9786647cc-68nqh
+namespace:vue-test, pod:games-9786647cc-xm7gg
+#highlight-end
+```
+
+参数说明
+<ol>
+<li>
+<b>%s</b>: 占位符,用于声明此处应存在一个字符串
+</li>
+<li>
+<b>'$1'</b>: 传入参数,awk默认解析的分隔符为空字符(贪婪模式),上述例子对应关系为 $1=NAMESPACE | $2=NAME | $3=READY | $4=STATUS | $5=RESTARTS | $6=AGE
+</li>
+</ol>
+
+  </div>
+</details>
+
+:::warning
+上述命令只是拼凑字符串到控制台, 要想让bash解释执行需要用管道符将stdin传给bash,举例子如下
+```shell title="强制删除集群内所有的处于Terminating状态的pod"
+kubectl get pods -A|grep Terminating |awk '{printf("kubectl delete pod --force --grace-period=0 -n %s %s\n", $1, $2)}'|bash
+```
+:::
+
