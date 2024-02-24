@@ -12,7 +12,7 @@ const config: Config = {
 
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: 'website/build',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -25,12 +25,11 @@ const config: Config = {
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
-  i18n: {
-    // defaultLocale: 'z,
-    // locales: ['zh-Hans'],
-    defaultLocale: 'en',
-    //locales: ['en'],
-  },
+  // i18n: {
+  //   // defaultLocale: 'zh-Hans',
+  //   // locales: ['zh-Hans'],
+  //
+  // },
 
   presets: [
     [
@@ -111,11 +110,11 @@ const config: Config = {
           items: [
             {
               label: 'eBpf专栏',
-              to: '/docs/category/ebpf专栏',
+              to: '/docs/category/ebpf-cookbook',
             },
             {
               label: 'HTTP庖丁解牛',
-              to: '/docs/category/HTTP庖丁解牛',
+              to: '/docs/category/http-cookbook',
             },
           ],
         },
