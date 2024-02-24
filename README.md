@@ -8,6 +8,9 @@ npx create-docusaurus@latest yuanyp8.github.io classic --typescript
 
 ## 安装react js的活动框
 npm install --save @docusaurus/theme-live-codeblock
+
+## 安装主题
+npm install @docusaurus/core @docusaurus/preset-classic
 ```
 
 
