@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkyuanyp_8_github_io=self.webpackChunkyuanyp_8_github_io||[]).push([[480],{844:a=>{a.exports=JSON.parse('{"label":"awk","permalink":"/blog/tags/awk","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

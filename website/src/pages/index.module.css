@@ -21,3 +21,384 @@
   align-items: center;
   justify-content: center;
 }
+
+.Container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.section {
+  padding: 40px 0;
+}
+
+/*.sectionAlt {*/
+/*  background-color: var(--ifm-color-emphasis-100);*/
+/*}*/
+
+.sectionInner {
+  margin: 0 auto;
+}
+
+.featureImage {
+  width: auto;
+  max-height: 128px;
+  margin: 0 auto;
+}
+
+/*.featureHeading {*/
+/*  font-size: var(--ifm-h3-font-size);*/
+/*  padding-top: 1rem;*/
+/*}*/
+
+.announcement {
+  font-weight: bold;
+  font-size: 24px;
+  padding: 48px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.announcementDark {
+  background-color: #20232a;
+  color: #fff;
+  /* Reapply the primary color, because it has been locally overridden as
+   * the dark theme color */
+  --ifm-link-color: var(--ifm-color-primary);
+}
+
+.announcementInner {
+  margin: 0 auto;
+  max-width: 768px;
+}
+
+.topBanner {
+  font-size: 20px;
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topBannerTitle {
+  font-size: 54px;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .topBannerTitle {
+    font-size: 40px;
+  }
+}
+
+.topBannerTitleText {
+  background: linear-gradient(
+          90deg,
+          rgb(131 58 180 / 100%) 0%,
+          rgb(253 29 29 / 100%) 50%,
+          rgb(252 176 69 / 100%) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.topBannerTitleText:hover {
+  border-bottom: solid 2px;
+  border-color: rgb(152 0 255);
+}
+
+html[data-theme='dark'] .topBannerTitleText {
+  background: linear-gradient(
+          90deg,
+          rgb(152 0 255) 0%,
+          rgb(246 41 41) 50%,
+          rgb(255 169 8) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.topBannerDescription {
+  font-size: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .topBannerDescription {
+    font-size: 16px;
+    white-space: normal;
+  }
+}
+
+.hero {
+  background-color: #2b3137;
+  padding: 48px;
+}
+
+.heroInner {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 0 20px;
+}
+
+.heroProjectTagline {
+  color: #fff;
+  font-size: 60px;
+  margin: 0;
+}
+
+.heroTitleTextHtml b {
+  color: var(--ifm-color-primary);
+}
+
+@keyframes jack-in-the-box {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.heroLogo {
+  animation-duration: 2s;
+  animation-name: jack-in-the-box;
+  float: right;
+  margin-top: 20px;
+  padding: 0 20px 20px;
+  height: auto;
+}
+
+.indexCtas {
+  --ifm-button-size-multiplier: 1.6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.indexCtas a,
+.indexCtas a:hover {
+  color: black;
+}
+
+.indexCtas a:last-of-type {
+  margin: 20px 36px;
+}
+
+.indexCtasGitHubButtonWrapper {
+  display: flex;
+}
+
+.indexCtasGitHubButton {
+  overflow: hidden;
+}
+
+.indexCtaTryNowButton:hover {
+  color: var(--ifm-color-primary);
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .heroInner {
+    padding: 0;
+  }
+
+  .heroProjectTagline {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .heroLogo {
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
+
+  .indexCtas {
+    justify-content: center;
+  }
+
+  .indexCtas a {
+    margin: 20px 36px;
+  }
+
+  .indexCtasGitHubButton {
+    display: none;
+  }
+}
+
+.tweetsSection > :global(.col) > * {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 996px) {
+  .tweetsSection > :global(.col:last-child) > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 997px) {
+  .tweetsSection > :global(.col) > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Used to test CSS insertion order */
+.test-marker-site-index-page {
+  content: 'site-index-page';
+}
+
+/* myCustomCSS */
+/*for HomeHero*/
+.myHeroContainer {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  background-color: #f5f4f4;
+  width: 100%;
+  overflow: hidden;
+  padding: 2.5rem 6rem;
+  background-color: var(--ifm-background-color);
+}
+.leftContainer {
+  padding: 3rem 0 0 1rem;
+  font-size: 40px;
+  flex: 2;
+}
+.rightContainer {
+  /* width: 70%; */
+  flex: 1.7;
+}
+
+.rightContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.leftContainer_h1 {
+  color: rgb(58, 58, 58);
+  font-size: 4rem;
+}
+.leftContainer_p {
+  color: #565451;
+  font-size: 1.5rem;
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: 4rem;
+  width: 20rem;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+}
+
+.button {
+  padding: 0.6rem 2rem;
+  background-color: #ffae33;
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.button:hover {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.button:active {
+  transform: scale(0.98);
+}
+
+.buttonLeftText {
+  display: inline-block;
+  margin: 0 0 10px 20px;
+  height: 2rem;
+  font-size: 0.8rem;
+  /*color: #515656;*/
+  /*color: 515656FF;*/
+}
+.svgContainer {
+  width: 13rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.svg {
+  /* font-size: 20px; */
+  width: 2.5rem;
+}
+.hero_a {
+  text-decoration: none;
+  color: white;
+}
+.hero_a:hover {
+  text-decoration: none;
+  color: white;
+}
+@media screen and (max-width: 966px) {
+  .myHeroContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+
+/*我自己复制的文字颜色*/
+.colorText {
+  background: linear-gradient(
+          90deg,
+          rgb(131 58 180 / 100%) 0%,
+          rgb(253 29 29 / 100%) 50%,
+          rgb(252 176 69 / 100%) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*.colorText:hover {*/
+/*  border-bottom: solid 2px;*/
+/*  border-color: rgb(152 0 255);*/
+/*}*/
+
+html[data-theme='dark'] .colorText {
+  background: linear-gradient(
+          90deg,
+          rgb(152 0 255) 0%,
+          rgb(246 41 41) 50%,
+          rgb(255 169 8) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

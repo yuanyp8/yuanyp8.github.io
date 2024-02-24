@@ -26,8 +26,10 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    // defaultLocale: 'z,
+    // locales: ['zh-Hans'],
+    defaultLocale: 'en',
+    //locales: ['en'],
   },
 
   presets: [
@@ -150,7 +152,7 @@ const config: Config = {
     },
     // 上方横条
     announcementBar: {
-      id: 'announcementBar-3',
+      id: 'announcementBar',
       content:
           '🚀 持续更新中··· <b><a target="_blank" rel="noopener noreferrer" href="https://github.com/yuanyp8/yuanyp8.github.io/tree/master/"> 如果你觉得还不错,就给一个⭐️吧~🥳</a> ',
       backgroundColor: '#fafbfc', // Defaults to `#fff`.
